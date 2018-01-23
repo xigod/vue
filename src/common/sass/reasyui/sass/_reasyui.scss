@@ -1,0 +1,162 @@
+.btn-frist {
+    margin-right: 15px;
+    min-width: 70px;
+}
+
+.switch{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.switch.icon-toggle-on{
+    color: #4dd865;
+}
+
+.switch.icon-toggle-off{
+     color: #ccc;
+}
+
+.span-fixed {
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//固定宽度栅格样式
+input[class^="input-"],
+input[class*=" input-"],
+select[class^="input-"],
+select[class*=" input-"] {
+    display: inline-block;
+    padding:6px;
+}
+.input-minic, input.input-minic {
+    width: 40px;
+    text-align: center;
+}
+.input-mini, input.input-mini {
+    width: 60px;
+}
+.input-small, input.input-small {
+    min-width: 70px;
+    max-width: 90px;
+}
+.input-medium{
+    min-width: 120px;
+    max-width: 160px;
+}
+.input-append{
+    display:block;
+}
+.input-append  .input-box{
+    padding-right:35px !important;
+    padding-left:12px !important;
+}
+
+/*公共组件*/
+.input-append .dropdown-toggle {
+    float: right;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background: #e4e4e4;
+    border: none;
+    border-left: 1px solid #d6d3d3;
+    border-radius: 0px;
+    padding: 7px 10px;
+}
+/* Placeholder */
+.placeholder-content {
+  position: relative;
+}
+
+.placeholder-content .placeholder-text {
+  position: absolute;
+  min-width: 200px;
+  top: 1px;
+  left: 12px;
+  color: #c6c3c0;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  text-align: left;
+}
+
+form.form-horizontal .placeholder-content .placeholder-text {
+  left: 17px;
+}
+
+#loginWrap .placeholder-content .placeholder-text {
+    left:32px;
+    top:5px;
+}
+
+#progress-dialog {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    width: 260px;
+    top: 100px;
+    left: 50%;
+    margin-left: -130px;
+    background-color: #363636;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#545454), to(#414141));
+    background-image: -webkit-linear-gradient(top, #545454, #414141);
+    background-image: -o-linear-gradient(top, #545454, #414141);
+    background-image: linear-gradient(to bottom, #545454, #414141);
+    background-image: -moz-linear-gradient(top, #545454, #414141);
+ filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff545454', endColorstr='#ff414141', GradientType=0);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    background: #000;
+}
+
+.fade {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.fade.in {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: block !important;
+}
+
+.progress-bar-warning {
+    background-color: #0c7cfa !important;
+}
+
+.dropdown-menu li a {
+    display: block;
+    font-size: 14px;
+    color: #333333;
+    cursor: pointer;
+    padding: 3px 8px;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li.focus > a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #ed7020;
+}
+
+
+@media(max-width:767px){
+  .radio-inline.r-block{
+    display: block;
+  }
+}

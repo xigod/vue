@@ -1,0 +1,56 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+// Floats
+// -------------------------
+
+.clearfix {
+  @include clearfix;
+}
+.center-block {
+  @include center-block;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.pull-none {
+  float: none !important;
+}
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.none {
+  display: none;
+}
+.show {
+  display: block;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  @include text-hide;
+}
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+}
+
+
+// For shadow
+// -------------------------
+@media (min-width: 767px) {
+.box-shadow{
+  border: 1px solid #ccc;
+  background: #fff;
+  box-shadow: 0 0 12px #bbb;
+}
+}

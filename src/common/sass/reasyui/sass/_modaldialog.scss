@@ -1,0 +1,182 @@
+.clearfix:after{
+	content:"."; 
+	display:block;
+	clear:both;
+	visibility:hidden
+}
+
+@mixin all($val){
+	-webkit-transition:$val;
+	-moz-transition:$val;
+	transition:$val;
+}
+
+@mixin btn($bg, $bd-color, $color:#fff){
+	color:$color;
+	border-color:$bd-color;
+	background-color:$bg;
+}
+
+@mixin opacity($opacity,$alpha){
+	filter:alpha(opacity = $alpha);
+	opacity:$opacity;
+}
+
+
+.md-overlay{
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	visibility:hidden;
+	z-index:2000;
+	@include opacity(0,0);
+	filter:alpha(opacity=40) \9 !important;
+	background-color:#000;
+	background-color:rgba(0,0,0,0.4);
+	@include all(all .3s);
+}
+
+.md-modal-wrap{
+	position: fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	visibility:hidden;
+	z-index:2001;
+}
+
+.md-modal{
+	position: relative;
+	top:10%;
+	// left:50%;
+	display: table;
+	margin: 0 auto;
+	// float:left;
+	overflow:visible;
+	visibility:hidden;
+	z-index:2001;
+	border-radius:4px;
+
+	.md-content{
+	    position: relative;
+	    top: 0;
+	    // left: -50%;
+	    background: #fff;
+
+	    -webkit-transform: scale(0.7);
+	    -moz-transform: scale(0.7);
+	    -ms-transform: scale(0.7);
+	    transform: scale(0.7);
+	    @include opacity(0,0);
+	    //ie 8 hack
+		filter:alpha(opacity=100) \9 !important;
+		@include all(all .3s);
+		
+		$header-h:40px;
+	    .md-header{
+	    	background-color:#f7f7f7;
+	    	border-bottom:1px solid #eee;
+	    	margin:0;
+	    }
+	    .md-header, .md-close,.md-toolbar{
+	    	font-size:14px;
+			height:$header-h;
+			line-height:$header-h;
+			text-align:center;
+	    }
+
+		.md-close{
+			position: absolute;
+			top:0;
+			right:0;
+			width:40px;
+			font-size:24px;
+		    border: 0;
+    		background-color: transparent;
+			    cursor:pointer;
+    		&:link, &:visited, &:hover, &:active{
+    			outline:none;
+    		}
+		}
+
+		.md-con-body{
+			padding:12px 12px 24px;
+		    overflow: auto;
+		    min-width: 260px;
+		    min-height: 100px;
+		}
+
+		iframe{
+			border:0;
+		}
+
+		.md-toolbar{
+			text-align:right;
+			padding-left:12px;
+			border-top:1px solid #eee;
+
+			.md-btn{
+				border: 0;
+			    padding: 0 12px;
+			    height:26px;
+		        box-sizing: content-box;
+			    line-height:26px;
+			    font-size: 14px;
+			    border-radius: 4px;
+			    color: #333;
+			    background-color: #fff;
+			    border:1px solid #ccc;
+			    margin-right: 12px;
+			    cursor:pointer;
+
+			    &.ok,&.success{
+			    	@include btn(#5cb85c, #4cae4c);
+			    }
+
+			    &.info{
+			    	@include btn(#5bc0de, #46b8da);
+			    }
+
+			    &.warning{
+			    	@include btn(#f0ad4e, #eea236);
+			    }
+
+			    &.danger{
+			    	@include btn(#d9534f, #d43f3a);
+			    }
+
+			    &.primary{
+			    	@include btn(#286090, #2e6da4);
+			    }
+			}
+		}
+	}
+
+}
+
+.md-show{
+	visibility:visible;
+	height:auto;
+	width:auto;
+	@include opacity(1,100);
+
+	&.md-overlay{
+	filter:alpha(opacity=20);
+	}
+
+	.md-modal{
+		visibility:visible;
+		@include opacity(1,100);
+	}
+
+	.md-content {
+	    -webkit-transform: scale(1);
+	    -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	    transform: scale(1);
+	    @include opacity(1,100); 
+	}
+}

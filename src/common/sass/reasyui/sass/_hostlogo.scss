@@ -1,0 +1,59 @@
+
+//企业logo数组，type值与后台传过来的关于设备厂商类型type值对应，无logo则选用other
+$logos:(
+	(type:'acer', name:'宏基', left:0, top:0),
+	(type:'amazon', name:'亚马逊', left:0, top:-44px),
+	(type:'arnova', name:'arnova', left:0, top:-88px),
+	(type:'coolpad', name:'coolpad', left:0, top:-132px),
+	(type:'google', name:'谷歌', left:0, top:-176px),
+	(type:'htc', name:'HTC', left:0, top:-220px),
+	(type:'apple', name:'苹果', left:0, top:-264px),
+	(type:'lenovo', name:'联想', left:0, top:-308px),
+	(type:'meizu', name:'魅族', left:0, top:-352px),
+	(type:'nokia', name:'诺基亚', left:0,top:-396px),
+	(type:'oneplus', name:'一加', left:-44px, top:0),
+	(type:'philips', name:'philips', left:-44px, top:-44px),
+	(type:'smartisan', name:'锤子', left:-44px, top:-88px),
+	(type:'sonyericsson', name:'sonyericsson', left:-44px, top:-132px),
+	(type:'vivo', name:'ViVo', left:-44px, top:-176px),
+	(type:'zte', name:'中兴', left:-44px, top:-220px),
+	(type:'aino', name:'aino', left:-44px, top:-264px),
+	(type:'amoi', name:'夏新', left:-44px, top:-308px),
+	(type:'asus', name:'华硕', left:-44px, top:-352px),
+	(type:'gionee', name:'金立', left:-44px, top:-396px),
+	(type:'hisense', name:'海信', left:-88px, top:-0),
+	(type:'huawei', name:'华为', left:-88px, top:-44px),
+	(type:'ktouch', name:'ktouch', left:-88px, top:-88px),
+	(type:'lg', name:'LG', left:-88px, top:-132px),
+	(type:'moto', name:'Moto', left:-88px, top:-176px),
+	(type:'nubia', name:'努比亚', left:-88px, top:-220px),
+	(type:'oppo', name:'OPPO', left:-88px, top:-264px),
+	(type:'samsung', name:'三星', left:-88px, top:-308px),
+	(type:'sony', name:'索尼', left:-88px, top:-352px),
+	(type:'tcl', name:'TCL', left:-88px, top:-396px),
+	(type:'tenda', name:'腾达', left:-132px, top:-0),
+	(type:'leshi', name:'乐视', left:-132px, top:-44px),
+	(type:'tp-link', name:'tp-link', left:-132px, top:-88px),
+	(type:'xiaomi', name:'小米', left:-132px, top:-132px),
+	(type:'pc', name:'pc', left:-132px, top:-176px),
+	(type:'unknown', name:'unknown', left:-132px,top:-220px),
+	(type:'others', name:'others', left:-132px,top:-264px)
+);
+    
+.hostlogo{
+	display:block;
+	width:40px;
+	height:40px;
+	background:transparent url('../../img/hostlogo.png') no-repeat -132px -220px;
+}
+
+@for $i from 1 through length($logos){
+	$logo: nth($logos, $i);
+
+	.logo-#{map-get($logo, type)}{
+		background-position:map-get($logo, left) map-get($logo, top);
+	}
+}
+
+
+  

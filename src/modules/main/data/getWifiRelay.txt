@@ -1,0 +1,551 @@
+{
+	"wifiRelay": {
+		"wifiRelayType": "wisp",
+		"wifiRelaySSID": "Tenda_48EE60",
+		"wifiRelayChannel": "0",
+		"wifiRelaySecurityMode": "none",
+		"wifiRelayPwd": "12345678",
+		"wifiRelayMAC": "44:33:6e:3b:88:22",
+		"wifiRelayConnectStatus":"bridgeSuccess"
+	},
+	"wifiScan": [
+    {
+        "wifiScanSSID": "  zhou   dapei",
+        "wifiScanMAC": "C8:3A:35:13:AC:D9",
+        "wifiScanChannel": "8",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-70",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "NOVA MW6-CRISTAL SONG",
+        "wifiScanMAC": "50:2B:73:09:69:E1",
+        "wifiScanChannel": "6",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-82",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Tenda_office",
+        "wifiScanMAC": "B8:3A:08:9E:95:61",
+        "wifiScanChannel": "9",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-82",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Tenda_0D9790",
+        "wifiScanMAC": "50:0F:F5:0D:97:90",
+        "wifiScanChannel": "10",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-84",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "DUT_24G_TEST",
+        "wifiScanMAC": "20:6B:E7:E6:3B:FB",
+        "wifiScanChannel": "1",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-90",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "BTHomeSpot2-CQS",
+        "wifiScanMAC": "C8:3A:35:17:A4:C2",
+        "wifiScanChannel": "1",
+        "wifiScanSecurityMode": "WPA2/AES",
+        "wifiScanSignalStrength": "-90",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "NOVA_96A0",
+        "wifiScanMAC": "C8:3A:35:D4:96:A1",
+        "wifiScanChannel": "6",
+        "wifiScanSecurityMode": "WPA2/AES",
+        "wifiScanSignalStrength": "-92",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Chinanet-2.4G-AD60",
+        "wifiScanMAC": "C8:3A:30:26:AD:62",
+        "wifiScanChannel": "10",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-94",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "NOVA MW6-CRISTAL SONG",
+        "wifiScanMAC": "50:2B:73:09:69:D1",
+        "wifiScanChannel": "6",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-96",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Tenda_1DD000",
+        "wifiScanMAC": "00:90:4C:1D:F0:00",
+        "wifiScanChannel": "11",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-96",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Tenda_83EF00",
+        "wifiScanMAC": "C8:3A:35:83:EF:01",
+        "wifiScanChannel": "4",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-98",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "PSST-smb-zht-mw6-^_^",
+        "wifiScanMAC": "B8:3A:08:DA:04:49",
+        "wifiScanChannel": "6",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-98",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "PSST_ruanjian_qinbo_ac18",
+        "wifiScanMAC": "C8:3A:35:13:AC:99",
+        "wifiScanChannel": "2",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-98",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "CU_SSID1",
+        "wifiScanMAC": "00:D0:D0:00:00:01",
+        "wifiScanChannel": "7",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "PSST-ruanjian-liulm-AC15",
+        "wifiScanMAC": "C8:3A:35:84:2C:09",
+        "wifiScanChannel": "8",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Tenda_127418",
+        "wifiScanMAC": "C8:3A:35:12:74:19",
+        "wifiScanChannel": "7",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "G0-TEST-AP",
+        "wifiScanMAC": "E8:65:D4:A5:14:29",
+        "wifiScanChannel": "9",
+        "wifiScanSecurityMode": "WPA2/AES",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Tenda_office",
+        "wifiScanMAC": "00:B0:C6:4E:7E:30",
+        "wifiScanChannel": "9",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "CU_PSST_TEST",
+        "wifiScanMAC": "58:D9:D5:00:01:58",
+        "wifiScanChannel": "1",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "PSST-rj-zff",
+        "wifiScanMAC": "88:20:18:01:04:61",
+        "wifiScanChannel": "11",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "CU_SSID_TEST",
+        "wifiScanMAC": "C8:3A:35:11:10:91",
+        "wifiScanChannel": "11",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "AC10",
+        "wifiScanMAC": "B8:3A:08:67:F8:21",
+        "wifiScanChannel": "3",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Tenda_office",
+        "wifiScanMAC": "00:B0:C6:4E:7E:50",
+        "wifiScanChannel": "1",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "nova-pan",
+        "wifiScanMAC": "50:2B:73:09:6A:DC",
+        "wifiScanChannel": "6",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Tenda_LJF_AC16",
+        "wifiScanMAC": "C8:3B:90:88:88:8D",
+        "wifiScanChannel": "5",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "PSST_ruanjian_hxl_PA701",
+        "wifiScanMAC": "08:57:00:0D:D7:2F",
+        "wifiScanChannel": "11",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Psst_Nova123",
+        "wifiScanMAC": "50:2B:73:09:69:29",
+        "wifiScanChannel": "6",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Xiaomi_F2BD",
+        "wifiScanMAC": "F0:B4:29:86:F2:BE",
+        "wifiScanChannel": "10",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "AZGD_24",
+        "wifiScanMAC": "CC:2D:21:DB:45:39",
+        "wifiScanChannel": "11",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "A240180",
+        "wifiScanMAC": "CC:2D:21:40:01:81",
+        "wifiScanChannel": "11",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "INTELBRAS",
+        "wifiScanMAC": "00:90:4C:88:00:22",
+        "wifiScanChannel": "13",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Chinanet-2.4G-20E0",
+        "wifiScanMAC": "50:2B:73:FB:20:E8",
+        "wifiScanChannel": "1",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "psst_rj_lt_w15e",
+        "wifiScanMAC": "C8:3A:35:01:1A:79",
+        "wifiScanChannel": "1",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "Tenda_office",
+        "wifiScanMAC": "00:B0:C6:4E:81:90",
+        "wifiScanChannel": "1",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "lianlian0718",
+        "wifiScanMAC": "C8:3A:35:D4:98:91",
+        "wifiScanChannel": "6",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "AAAAA",
+        "wifiScanMAC": "C8:3A:35:E4:10:71",
+        "wifiScanChannel": "9",
+        "wifiScanSecurityMode": "WPA2/AES",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "CU_jhvR",
+        "wifiScanMAC": "C8:3A:35:53:D3:70",
+        "wifiScanChannel": "11",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "CU_SSID1",
+        "wifiScanMAC": "00:D0:D0:00:00:01",
+        "wifiScanChannel": "7",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-100",
+        "wifiScanChkHz": "24G"
+    },
+    {
+        "wifiScanSSID": "INTELBRAS_5G",
+        "wifiScanMAC": "C8:3A:35:13:AC:DD",
+        "wifiScanChannel": "153",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-42",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "DUT_5G_TEST",
+        "wifiScanMAC": "20:6B:E7:E6:3C:00",
+        "wifiScanChannel": "149",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-72",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "AZGD_5G",
+        "wifiScanMAC": "CC:2D:21:DB:45:3D",
+        "wifiScanChannel": "149",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-73",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "nova-pan",
+        "wifiScanMAC": "50:2B:73:09:6A:CA",
+        "wifiScanChannel": "48",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-74",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "BTHomeSpot5-CQS",
+        "wifiScanMAC": "C8:3A:35:17:A4:C4",
+        "wifiScanChannel": "40",
+        "wifiScanSecurityMode": "WPA2/AES",
+        "wifiScanSignalStrength": "-78",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "NOVA MW6-CRISTAL SONG",
+        "wifiScanMAC": "50:2B:73:09:69:E5",
+        "wifiScanChannel": "40",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-78",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "PSST-ruanjian-liulm-AC15_5G",
+        "wifiScanMAC": "C8:3A:35:84:2C:0D",
+        "wifiScanChannel": "161",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-80",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "psst_rj_lt_w15e_5g",
+        "wifiScanMAC": "C8:3A:35:01:1A:7E",
+        "wifiScanChannel": "44",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-80",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "INTELBRAS_5G",
+        "wifiScanMAC": "00:90:4C:88:88:00",
+        "wifiScanChannel": "153",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-81",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "Tenda_office_5G",
+        "wifiScanMAC": "00:B0:C6:4E:7E:38",
+        "wifiScanChannel": "149",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-82",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "aaaaaaaaaaaaaaaaaaaa_5G",
+        "wifiScanMAC": "00:90:4C:88:22:33",
+        "wifiScanChannel": "161",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-84",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "Tenda_office_5G",
+        "wifiScanMAC": "00:B0:C6:4E:81:98",
+        "wifiScanChannel": "157",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-84",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "Chinanet-5G-AD60",
+        "wifiScanMAC": "C8:3A:30:26:AD:68",
+        "wifiScanChannel": "48",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-84",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "Tenda_office_5G",
+        "wifiScanMAC": "00:B0:C6:4E:82:D8",
+        "wifiScanChannel": "149",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-85",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "A5G0180",
+        "wifiScanMAC": "CC:2D:21:40:01:85",
+        "wifiScanChannel": "149",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-85",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "lianlian0718",
+        "wifiScanMAC": "C8:3A:35:D4:98:84",
+        "wifiScanChannel": "40",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-85",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "Chinanet-5G-20E0",
+        "wifiScanMAC": "50:2B:73:FB:20:E2",
+        "wifiScanChannel": "44",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-86",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "PSST_ruanjian_qinbo_ac18_5G",
+        "wifiScanMAC": "C8:3A:35:13:AC:9D",
+        "wifiScanChannel": "153",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-86",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "NOVA_96A0",
+        "wifiScanMAC": "C8:3A:35:D4:96:A4",
+        "wifiScanChannel": "40",
+        "wifiScanSecurityMode": "WPA2/AES",
+        "wifiScanSignalStrength": "-87",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "Psst_Nova123",
+        "wifiScanMAC": "50:2B:73:09:69:2C",
+        "wifiScanChannel": "40",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-87",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "Xiaomi_F2BD_5G",
+        "wifiScanMAC": "F0:B4:29:86:F2:BF",
+        "wifiScanChannel": "157",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-87",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "PSST-rj-zff-5G",
+        "wifiScanMAC": "88:20:18:01:04:66",
+        "wifiScanChannel": "40",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-87",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "PSST-smb-zht-mw6-^_^",
+        "wifiScanMAC": "B8:3A:08:DA:04:4C",
+        "wifiScanChannel": "40",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-87",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "NOVA MW6-CRISTAL SONG",
+        "wifiScanMAC": "50:2B:73:09:69:D5",
+        "wifiScanChannel": "40",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-88",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "AAAAA",
+        "wifiScanMAC": "C8:3A:35:E4:10:74",
+        "wifiScanChannel": "36",
+        "wifiScanSecurityMode": "WPA2/AES",
+        "wifiScanSignalStrength": "-88",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "Tenda_00AA22_5G",
+        "wifiScanMAC": "C8:3A:35:00:AA:27",
+        "wifiScanChannel": "149",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-88",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "Tenda_83EF00_5G",
+        "wifiScanMAC": "C8:3A:35:83:EF:05",
+        "wifiScanChannel": "157",
+        "wifiScanSecurityMode": "NONE",
+        "wifiScanSignalStrength": "-89",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "Xiaomi_F2BD_5G",
+        "wifiScanMAC": "F0:B4:29:86:F2:BF",
+        "wifiScanChannel": "157",
+        "wifiScanSecurityMode": "WPAWPA2/AESTKIP",
+        "wifiScanSignalStrength": "-88",
+        "wifiScanChkHz": "5G"
+    },
+    {
+        "wifiScanSSID": "PSST-SY-YJ-355_5G",
+        "wifiScanMAC": "58:AC:78:48:B2:E5",
+        "wifiScanChannel": "161",
+        "wifiScanSecurityMode": "WPAWPA2/AES",
+        "wifiScanSignalStrength": "-90",
+        "wifiScanChkHz": "5G"
+    }],
+	"wifiEn": {
+		"wifiEn": "true"
+	}
+}

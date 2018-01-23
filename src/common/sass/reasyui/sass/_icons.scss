@@ -1,0 +1,146 @@
+@font-face {
+  font-family: 'reasyicon';
+  src:url('/fonts/reasyicon.eot');
+  src:url('/fonts/reasyicon.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/reasyicon.ttf') format('truetype'),
+    url('/fonts/reasyicon.woff') format('woff'),
+    url('/fonts/reasyicon.svg#reasyicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'reasyicon';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-check-circled:before {
+    content: "\e600";
+}
+.icon-parental:before {
+    content: "\e601";
+}
+.icon-repeater:before {
+    content: "\e602";
+}
+.icon-warn-circled:before {
+    content: "\e603";
+}
+.icon-wired:before {
+    content: "\e604";
+}
+.icon-advanced:before {
+    content: "\e605";
+}
+.icon-attention:before {
+    content: "\e606";
+}
+.icon-device:before {
+    content: "\e607";
+}
+.icon-download:before {
+    content: "\e011";
+}
+.icon-edit:before {
+    content: "\e609";
+}
+.icon-facebook:before {
+    content: "\e60a";
+}
+.icon-help-circled:before {
+    content: "\e60b";
+}
+.icon-internet:before {
+    content: "\e60c";
+}
+.icon-internet-thin:before {
+    content: "\e60d";
+}
+.icon-IPv6:before {
+    content: "\e60e";
+}
+.icon-lang:before {
+    content: "\e60f";
+}
+.icon-lock:before {
+    content: "\e610";
+}
+.icon-minus-circled:before {
+    content: "\e611";
+}
+.icon-netSpeed:before {
+    content: "\e612";
+}
+.icon-plus-circled:before {
+    content: "\e613";
+}
+.icon-refresh:before {
+    content: "\e614";
+}
+.icon-router:before {
+    content: "\e615";
+}
+.icon-router-thin:before {
+	content: "\e616";
+}
+.icon-system:before {
+	content: "\e617";
+}
+.icon-toggle-off:before {
+	content: "\e618";
+}
+.icon-toggle-on:before {
+	content: "\e619";
+}
+.icon-twitter:before {
+	content: "\e61a";
+}
+.icon-upload:before {
+	content: "\e012";
+}
+.icon-user:before {
+	content: "\e61c";
+}
+.icon-users:before {
+	content: "\e61d";
+}
+.icon-wechat:before {
+	content: "\e61e";
+}
+.icon-weibo:before {
+	content: "\e61f";
+}
+.icon-wireless:before {
+	content: "\e621";
+}
+.icon-caret:before {
+  content: "\e622";
+}
+
+.icon-manufacturer:before {
+  content:"\e623";
+}
+.ico,.menu{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ico-groups {
+  position: relative;
+  text-align: left;
+}
+.ico-groups .ico{
+  position: absolute;
+  margin:10px;
+  color: #666;
+}
+.ico-groups .ico-text {
+  height: 40px;
+  padding-left: 32px;
+  padding-top:9px;
+}
