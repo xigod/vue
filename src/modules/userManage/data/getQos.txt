@@ -1,75 +1,47 @@
 {
-	"wifiBasicCfg": {
-		"wifiEn": "true",
-		"wifiEn_5G":"false"
-	},
-	"wifiRelay": {
-		"wifiRelayType": "disabled"
-	},
 	"localhost": {
-		"localhost": "192.168.0.7",
-		"lanMask": "255.255.255.0",
-		"localhostMAC":"22:33:6E:3B:88:22"
+		"localhost": "192.168.0.1",
+		"lanMask": "255.255.255.0"
 	},
-	"wifiGuest": {
-		"guestEn":"true",
-		"guestSSID":"Tenda_VIP",
-		"guestSSID_5G":"Tenda_VIP_5G",
-		"guestPwd":"12345678",
-		"guestValidTime":"4",
-		"guestShareSpeed":"128000"
-	},
-	"onlineList":[
-	{
-		"qosListHostname": "taiji",
-		"qosListRemark": "taiji",
+	"onlineList":[{
+		"qosListHostname": "windy",
+		"qosListRemark": "windy",
 		"qosListConnectType": "wifi",
-		"qosListIP":"192.168.0.2",
+		"qosListIP":"192.168.0.1",
 		"qosListMac": "C8:3A:35:DD:AF:39",
-		"qosListManufacturer":"nokia",
-		"qosListDownSpeed": "7",
-		"qosListUpSpeed": "24",
+		"qosListManufacturer":"xiaomi",
+		"qosListDownSpeed": "8",
+		"qosListUpSpeed": "26",
 		"qosListDownLimit": "5",
 		"qosListUpLimit": "28",
 		"qosListConnectTime":"12345",
 		"qosListAccess": "true"
-	},
-	{
-		"qosListHostname": "windy",
+	},{
+		"qosListHostname": "windy2",
 		"qosListRemark": "windy",
 		"qosListConnectType": "wifi",
-		"qosListIP":"192.168.0.7",
+		"qosListIP":"192.168.0.2",
 		"qosListMac": "C8:3A:35:DD:AF:39",
-		"qosListManufacturer":"xiaomi",
-		"qosListDownSpeed": "9",
-		"qosListUpSpeed": "26",
-		"qosListDownLimit": "13",
-		"qosListUpLimit": "50",
-		"qosListConnectTime":"12345",
-		"qosListAccess": "true"
-	}],
-
-	"guestList": [{
-		"qosListHostname": "dapei",
-		"qosListRemark": "dapei",
-		"qosListIP":"192.168.1.16",
-		"qosListManufacturer":"xiaomi",
-		"qosListDownSpeed": "10",
-		"qosListUpSpeed": "27"
-	},{
-		"qosListHostname": "zhenggengde",
-		"qosListRemark": "zhenggengde",
-		"qosListIP":"192.168.1.28",
 		"qosListManufacturer":"nokia",
 		"qosListDownSpeed": "8",
-		"qosListUpSpeed": "25"
+		"qosListUpSpeed": "26",
+		"qosListDownLimit": "5",
+		"qosListUpLimit": "28",
+		"qosListConnectTime":"12345",
+		"qosListAccess": "true"
 	},{
-		"qosListHostname": "hahaha",
-		"qosListRemark": "hahaha",
-		"qosListIP":"192.168.1.6",
+		"qosListHostname": "windy3",
+		"qosListRemark": "windy",
+		"qosListConnectType": "wifi",
+		"qosListIP":"192.168.0.2",
+		"qosListMac": "C8:3A:35:DD:AF:39",
 		"qosListManufacturer":"nokia",
-		"qosListDownSpeed": "23",
-		"qosListUpSpeed": "13"
+		"qosListDownSpeed": "8",
+		"qosListUpSpeed": "26",
+		"qosListDownLimit": "5",
+		"qosListUpLimit": "28",
+		"qosListConnectTime":"12345",
+		"qosListAccess": "true"
 	}],
 	
 	"macFilter": {
@@ -77,12 +49,12 @@
 		"macFilterList":[{
 			"hostname": "Unknown",
 			"remark": "",
-			"mac":"b0:83:fe:b7:d1:aa",
+			"mac":"b0:83:fe:b7:d1:ab",
 			"filterMode":"deny"
 		},{
 			"hostname": "Unknown",
 			"remark": "testpass",
-			"mac":"a4:83:fe:b7:d1:aa",
+			"mac":"a4:83:fe:b7:d1:ab",
 			"filterMode":"pass"
 		}]
 	}

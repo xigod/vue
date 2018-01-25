@@ -7,7 +7,7 @@
 		</p>
 	</div>
 </noscript>
-<div id="main_content" class="none">
+<div id="main_content">
 	<%include('./tpl/index-header.tpl')%>
 
 	<section class="container">

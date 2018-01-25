@@ -7,7 +7,7 @@
 	</div>
 	<div class="dialog-container" style="padding:14px 22px;">
 		<div class="col-sm-5 col-sm-offset-1" >
-			<img src="../../../common/img/app.png" />
+			
 			<p class="help-block" style="margin-left:35px;">Scan QR Code</p>
 		</div>
 		<div class="col-sm-6 hidden-xs" style="margin-top:20px;">
@@ -33,7 +33,7 @@
 			</div>
 			<div class="dialog-container clearfix">
 				<div class="dialog-con-float">
-					<img src="../../../common/img/app.png" />
+					
 					<p class="help-block" style="margin-left:35px;">Scan QR Code</p>
 				</div>
 				<div class="dialog-con-float" style="margin-top:20px;">
@@ -52,10 +52,10 @@
 <div id="appDianoseWrapperTitle" class="none">Remote Management with Tenda App</div>/
 <div id="appDianoseWrapper" class="dialog-container none">
 	<div class="dialog-con-float">
-		<img src="../../../common/img/app.png" />
-		<p class="help-block">Scan QR Code</p>
+		
+		<p class="help-block" style="margin-left:35px;">Scan QR Code</p>
 	</div>
-	<div class="dialog-con-float">
+	<div class="dialog-con-float" style="margin-top:20px;">
 		<span style="margin-left:23px; font-weight:bold">Tenda App</span>
 		<ul>
 			<li>Remotely control the router.</li>

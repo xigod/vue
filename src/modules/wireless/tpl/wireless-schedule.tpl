@@ -39,7 +39,7 @@
     </div>
     <div class="form-group">
       <label class="col-sm-4 col-md-3 control-label">Turn WiFi Off On</label>
-      <div class="col-sm-8 col-md-9">
+      <div class="col-sm-8">
         <label class="checkbox-inline" for="day0">
           <input type="checkbox" id="day0" value="ALL">Everyday</label>
         <label class="checkbox-inline" for="day1">

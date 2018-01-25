@@ -50,13 +50,6 @@ function ModuleLogic(view) {
 
 			$(".network-wrapper").css("height", oHeight);
 		});
-
-		//点击蒙版时，可以关闭弹框
-		$("#progress-overlay").on("click",function() {
-			dialog.close({
-				Id: "inportWanPPPOE"
-			});
-		});
 	};
 
 	this.changeWanType = function () {
@@ -153,7 +146,7 @@ function ModuleLogic(view) {
 			$("#wanPPPoEPwd").val("");
 
 			//样式初始化
-			$("#wanPPPoEUser").addPlaceholder(_("User Name from ISP"));
+			$("#wanPPPoEUser").addPlaceholder(_("User name from ISP"));
 			$("#wanPPPoEPwd").initPassword(_("Password from ISP"));
 			$("#wifiSSID").addPlaceholder(_("WiFi Name"));
 			$("#wifiPwd").initPassword(_("8 or more characters"));

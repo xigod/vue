@@ -1624,14 +1624,6 @@ if ("undefined" === typeof jQuery && "undefined" === typeof REasy) {
 
 		},
 
-		byteLen: function(str, min, max) {
-            var totalLength = $.getUtf8Length(str);
-
-            if (typeof min !== "undefined" && typeof max !== "undefined" && (totalLength < min || totalLength > max)) {
-                return _(" %s - %s bytes are required.", [min, max]);
-            }
-        },
-
 		num: {
 			all: function (str, min, max) {
 
@@ -1664,7 +1656,7 @@ if ("undefined" === typeof jQuery && "undefined" === typeof REasy) {
 				var subMac1 = str.split(':')[0];
 
 				if (subMac1.charAt(1) && parseInt(subMac1.charAt(1), 16) % 2 !== 0) {
-					return _('The second character must be an even number.');
+					return _('The second character must be even number.');
 				}
 				if (str === "00:00:00:00:00:00") {
 					return _('MAC can not be 00:00:00:00:00:00.');
@@ -1768,13 +1760,7 @@ if ("undefined" === typeof jQuery && "undefined" === typeof REasy) {
 		ssid: function (str) {
 			var length = str.replace(/[^\x00-\xff]/g, 'aaa').length; //解决驱动中1个中文字符占3个字节的问题
 			if (length > 32) {
-				return _("The length cannot be greater than %s characters.",[32]);
-			}
-		},
-		ssid_quickset: function(str) {
-			var length = str.replace(/[^\x00-\xff]/g, 'aaa').length; //解决驱动中1个中文字符占3个字节的问题
-			if (length > 29) {
-				return _("The length cannot be greater than %s characters.",[29]);
+				return _("The length cannot be greater than 32 characters.");
 			}
 		},
 		ssidPasword: {
@@ -1824,7 +1810,7 @@ if ("undefined" === typeof jQuery && "undefined" === typeof REasy) {
 			},
 			specific: function (str) {
 				if ((/[\\'"]/g).test(str)) {
-					return _("Invalid input: \\ ' \"");
+					return _("Can't input: \\ ' \"");
 				}
 			}
 
@@ -1871,6 +1857,28 @@ if ("undefined" === typeof jQuery && "undefined" === typeof REasy) {
 	};
 
 	$.validate.utils = utils;
+	$.validate.valid = valid;
+
+	// 中文翻译
+	/*$.extend($.reasyui.b28n, {
+		"Must be integer": "请输入数字",
+		"Input range is: %s - %s": "输入范围：%s - %s",
+		"this field is required": "本项不能为空",
+		"String length range is: %s - %s bit": "长度范围：%s - %s 位",
+		"Please input a valid IP address.": "请输入正确的 IP 地址",
+		"Please input a valid subnet mask": "请输入正确的子网掩码",
+		"Please input a valid MAC address": "请输入正确的 MAC 地址",
+		"MAC can not be 00:00:00:00:00:00.": "Mac 地址不能全为0",
+		"Must be ASCII.": "请输入非中文字符",
+		"Can't input: '%s'": "不能输入: ‘%s’",
+		"Must be numbers, letters or an underscore": "请输入数字，字母或下划线",
+		"The second character must be even number.": "MAC 地址的第二个字符必须为偶数",
+		"IP address can't be multicast, broadcast or loopback address.": "IP 地址不能为组播,广播或环回地址",
+		"The IP address starting with 127 is loopback address, please try another.": "以127开始的地址为保留的环回地址，请指定一个1到223之间的值。",
+		"The value %s is invalid, please enter value between 1-223.": "以%s开始的地址无效，请指定一个1到223之间的值。",
+		"First input %s less than 223.": "以 %s 开始的地址无效，请指定一个223到255之间的值。"
+	});*/
+
 	$.validate.valid = valid;
 
 	/* Validate Tip */

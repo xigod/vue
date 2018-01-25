@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
 	var pageModule = new PageLogic({
 		getUrl: "goform/getWAN",
-		modules: "wifiBasicCfg,wifiRelay,lanCfg,wanBasicCfg,wanAdvCfg,internetStatus",
+		modules: "wifiEn,wifiRelay,lanCfg,wanBasicCfg,wanAdvCfg,internetStatus",
 		setUrl: "goform/setWAN"
 	});
 
@@ -12,8 +12,6 @@ define(function (require, exports, module) {
 	pageModule.preMode = "";
 	pageModule.currentMode = "disabled";
 
-	var do_close_flag = true;
-
 	pageModule.initEvent = function () {
 
 		pageModule.update("internetStatus", 3000, function (obj) {
@@ -23,8 +21,6 @@ define(function (require, exports, module) {
 		});
 
 		$("#ok").on("click", function () {
-			do_close_flag = false;
-
 			var $this = $(this);
 			$this.attr("disabled", true);
 			var str = wifiRepeatModule.getSubmitData();
@@ -52,18 +48,6 @@ define(function (require, exports, module) {
 					mainLogic.showModuleMsg(_("Failed to upload the data."));
 				}
 			});
-		});
-
-		//点击蒙版时，可以关闭弹框
-		$("#progress-overlay").on("click",function() {
-			if(do_close_flag) {
-				dialog.close({
-					Id: "changeModeInfo"
-				});
-			}else{
-				return;
-			}
-			
 		});
 
 	}
@@ -131,10 +115,7 @@ define(function (require, exports, module) {
 		}
 		this.initEvent = function () {
 			$("#refreshTable").on("click", scanWifi);
-
-			$("#wifiScanTbody").delegate(".selectSSID", "click", changeSSID);
-			$("#wifiScanTbody").delegate("td", "click", changeSSID);
-
+			$("#wifiScan").delegate(".selectSSID", "click", changeSSID);
 			$("input[name='wifiRelayType']").on("click", changeMode);
 
 			$("#wifiRelayPwd").on("keyup", changeConnectBtnStatus);
@@ -159,8 +140,7 @@ define(function (require, exports, module) {
 			$("#wifiRelaySSID").html("<p class='form-control-static'></p>");
 			$("#wifiRelaySSID p").text(wifiRelayobj.wifiRelaySSID);
 
-			//未启用无线
-			if (!(pageModule.data.wifiBasicCfg.wifiEn == "true" || pageModule.data.wifiBasicCfg.wifiEn_5G == "true")) { 
+			if (pageModule.data.wifiEn.wifiEn != "true") { //未启用无线
 				$("[name='wifiRelayType']")[0].checked = true;
 				$("[name='wifiRelayType']").attr("disabled", true);
 			}
@@ -170,8 +150,7 @@ define(function (require, exports, module) {
 				wifiRelaySSID: wifiRelayobj.wifiRelaySSID,
 				wifiRelayMAC: wifiRelayobj.wifiRelayMAC,
 				wifiRelaySecurityMode: wifiRelayobj.wifiRelaySecurityMode,
-				wifiRelayChannel: wifiRelayobj.wifiRelayChannel,
-				wifiRelayChkHz: wifiRelayobj.wifiRelayChkHz
+				wifiRelayChannel: wifiRelayobj.wifiRelayChannel
 			};
 			changeMode();
 		};
@@ -294,10 +273,6 @@ define(function (require, exports, module) {
 				tdElem.innerHTML = "<input type='radio' name='selectSSID' class='selectSSID'>";
 				trElem.appendChild(tdElem);
 				for (prop in arry[i]) {
-					if(prop == "wifiScanChkHz") {
-						continue;
-					}
-
 					tdElem = document.createElement("td");
 
 					if (prop == "wifiScanMAC" || prop == "wifiScanChannel" ||
@@ -328,13 +303,9 @@ define(function (require, exports, module) {
 						}
 
 						if (prop == "wifiScanSSID") {
-							$(tdElem).attr("title", arry[i][prop]);
-
 							$(tdElem).attr("data-title", arry[i][prop]);
-							$(tdElem).attr("data-hzType", arry[i].wifiScanChkHz);
-
-							$(tdElem).addClass("wifi-ssid-target");
 						}
+
 
 					} else {
 						signal = (+arry[i][prop]);
@@ -352,13 +323,6 @@ define(function (require, exports, module) {
 
 					}
 					trElem.appendChild(tdElem);
-
-					//增加5G标识
-					if (arry[i].wifiScanChkHz == "5G") {
-		                // trElem.childNodes[1].innerHTML = arry[i].wifiScanSSID + "<img style='padding-left:20px' src='/img/5g.png'>";
-		                trElem.childNodes[1].innerHTML = "<div class='span-fixed' style='display:inline-block;'>" + arry[i].wifiScanSSID + "</div><img style='padding-left:10px;display: inline-block;margin-top: -10px;' src='/img/5g.png'>";
-		            }
-		            // trElem.childNodes[1].className = "span-fixed";
 				}
 				if (document.getElementById("wifiScanTbody")) {
 					document.getElementById("wifiScanTbody").appendChild(trElem);
@@ -410,24 +374,12 @@ define(function (require, exports, module) {
 
 		/*******选择ssid******/
 		function changeSSID() {
-			var $parent = "",
-				domClass = $(this).context.className;
-
-			if(domClass == "selectSSID"){
-				$parent = $(this).parent().parent();
-			}else{
-				$parent = $(this).parent();
-
-				//勾选上当前行的radio
-				$parent.children().eq(0).children()[0].checked = true;
-			}
-
+			var $parent = $(this).parent().parent();
 			var ssid = $parent.children().eq(1).attr("data-title"),
 				mac = $parent.children().eq(2).html(),
 				channel = $parent.children().eq(3).html(),
 				security = $parent.children().eq(4).attr("data-title"),
-				signalStrength = $parent.children().eq(5).find('span').html(),
-				hzType = $parent.children().eq(1).attr("data-hzType");
+				signalStrength = $parent.children().eq(5).find('span').html();
 
 			if (+(signalStrength.replace(/[%]/, "")) < 40) {
 				top.mainLogic.showModuleMsg(_("The signal strength of the remote wireless network is weak and the wireless bridge may be stopped. Place the router at a location with better signal strength."));
@@ -439,7 +391,7 @@ define(function (require, exports, module) {
 			$("#connectRelay").attr("disabled", true).removeClass("btn-primary");
 
 			if (ssid == "") {
-				$("#wifiRelaySSID").html('<input type="text" maxlength="32" placeholder="' + _("WiFi name of the upstream router") + '" class="form-control validatebox" data-options="{\'type\': \'ssid\'}" />');
+				$("#wifiRelaySSID").html('<input type="text" maxlength="32" placeholder="' + _("WiFi Name of of the base station") + '" class="form-control validatebox" data-options="{\'type\': \'ssid\'}" />');
 				$("#wifiRelaySSID input").val(ssid);
 			} else {
 
@@ -451,8 +403,7 @@ define(function (require, exports, module) {
 				wifiRelaySSID: ssid,
 				wifiRelayMAC: mac,
 				wifiRelaySecurityMode: security,
-				wifiRelayChannel: channel,
-				wifiRelayChkHz: hzType
+				wifiRelayChannel: channel
 			}
 			showWifiPwd(security);
 
@@ -461,7 +412,8 @@ define(function (require, exports, module) {
 
 			if(ssIDModal){
 				ssIDModal.show();
-			}else{
+			}
+			else{
 				var title = "";
 				if (security.toLowerCase() == "none") {
 					title = _("Note");
@@ -473,6 +425,11 @@ define(function (require, exports, module) {
 					content:$("#setRelayWrapper")
 				})
 			}
+			
+			// dialog.open({
+			// 	Id: "setRelayWrapper",
+			// 	height: 300
+			// });
 		}
 		/*********改变模式************/
 		function changeMode() {
@@ -536,8 +493,6 @@ define(function (require, exports, module) {
 		 * @method [提交wisp或xx模式]
 		 */
 		function submitWifiRelay() {
-			do_close_flag = false;
-
 			var $this = $(this);
 			$this.attr("disabled", true);
 
@@ -637,7 +592,7 @@ define(function (require, exports, module) {
 
 			//作用标记使用，让addplaceholder, initPassword只执行一次
 			if (!this.addInputEvent) {
-				$("#wanPPPoEUser").addPlaceholder(_("User Name from ISP"));
+				$("#wanPPPoEUser").addPlaceholder(_("User name from ISP"));
 				$("#wanPPPoEPwd").initPassword(_("Password from ISP"));
 				this.addInputEvent = true;
 			}

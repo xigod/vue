@@ -1,0 +1,1 @@
+b28Cfg.supportLang = ["cn"];b28Cfg.defaultLang = "en";window.CONFIG_HASWPS = false;window.CONFIG_HASSYSTIME = false;

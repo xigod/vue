@@ -15,7 +15,7 @@ define(function (require, exports, module) {
 
 	pageModule.beforeSubmit = function () {
 		if (pageModule.data.lanCfg.lanIP != $("#lanIP").val()) {
-			if (!confirm(_('The login IP address will be changed into %s.', [$("#lanIP").val()]))) {
+			if (!confirm(_('The login IP will be changed into %s.', [$("#lanIP").val()]))) {
 				return false;
 			}
 		}
@@ -470,7 +470,7 @@ define(function (require, exports, module) {
 				remoteWebIP = $("#remoteWebIP").val();
 
 			if ($("#remoteWebEn")[0].checked && $("#remoteWebType").val() == "specified") {
-				var msg = checkIsVoildIpMask(remoteWebIP, "255.255.255.0", _("Remote IP Address"));
+				var msg = checkIsVoildIpMask(remoteWebIP, "255.255.255.0", _("Remote IP"));
 				if (msg) {
 					$("#remoteWebIP").focus();
 					return msg;
@@ -574,7 +574,7 @@ define(function (require, exports, module) {
 				var $this = $(this);
 				$this.attr("disabled", true);
 
-				if (confirm(_("Reboot the device?"))) {
+				if (confirm(_("Do you want to reboot the device?"))) {
 					$(this).blur();
 
 					$.post("goform/sysReboot", "module1=sysOperate&action=reboot", function (str) {
@@ -654,11 +654,14 @@ define(function (require, exports, module) {
 				responseType: 'json',
 
 				onSubmit: function (file, ext) {
-					if (confirm(_("Upgrade the device?"))) {
+					if (confirm(_('Upgrade the device?'))) {
 						if (!ext) {
 							return false;
 						}
-	
+						//  if (!(ext && /^(bin|trx)$/.test(ext))) {
+						//    alert("请选择文件名以 “trx” 或 “bin”结尾的文件");
+						//    return false;
+						//  }
 					} else {
 						document.upgradefrm.reset();
 						return false;

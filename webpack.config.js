@@ -4,8 +4,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 //分离sass插件
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-//复制文件或文件夹，处理语言包问题
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+var fs = require('fs');
 
 const extractSass = new ExtractTextPlugin({
     filename: "[name].css",
@@ -30,9 +29,6 @@ var option = {
     devServer: {
         contentBase: "./dist",//本地服务器所加载的页面所在的目录
         historyApiFallback: true,//不跳转
-        port: 8088,
-        //hot：true // 启动webpack热模块替换特性
-        stats: "minimal", //编译信息配置
         inline: true//实时刷新
     },
     module: {
@@ -94,12 +90,6 @@ var option = {
             filename: 'index.html',
             template: './src/modules/main/index.tpl'
         }),
-       new CopyWebpackPlugin([
-            // {output}/file.txt
-            { from: './src/common/img/', to: 'img/' },
-            { from: './src/common/js/', to: 'js/libs/' },
-            { from: './src/common/fonts/', to: 'fonts/' }
-            ]),
         /* new HtmlWebpackPlugin({
             title: 'ahhhhhhh',
             filename: 'status.html',
@@ -112,9 +102,6 @@ var option = {
             template: './src/modules/system/system.tpl',
             chunks: ['system']
         }),*/
-        new webpack.DefinePlugin({
-          'process.CONFIG_HASSYSTIME111': JSON.stringify(false)
-        }),
         extractSass/*,
         new webpack.ProvidePlugin({
             $: "jquery",
@@ -128,10 +115,8 @@ var option = {
     ]
 }
 var selfModules = ['advanced','quickset','userManage','ipv6','system','wireless','wechart','wireless-repeaters','network','parental-controls','net-control','system','status'];
-//语言包在此配置
-var lang = ['cn','de','es','fr','hu','it','ko','pl','pt','ro','tr','zh'];
+var a = ['main'];
 
-//打包每个模块自有的tpl
 selfModules.forEach((element) => {
   const chunksArray = [element];
 
@@ -143,20 +128,6 @@ selfModules.forEach((element) => {
   });
   option.plugins.push(newPlugin);
 });
-
-//按照配置打包语言包
-const dir = [];
-lang.forEach((elements) => {
-    
-    dir.push({
-    from: './src/common/lang/' + elements,
-    to: 'lang/' + elements
-  });
-});
-const newPlugins = new CopyWebpackPlugin(dir);
-  option.plugins.push(newPlugins);
-
-
 
 
 module.exports = option;    

@@ -2,28 +2,7 @@
 	"parentCtrlList":[{
 		"parentCtrlHostname": "windy",
 		"parentCtrlRemark":"taiji",
-		"parentCtrlIP":"192.168.0.7",
-		"parentCtrlMAC":"44:33:6e:3b:88:66",
-		"parentCtrlConnectTime":"60",
-		"parentCtrlEn": "true"
-	},{
-		"parentCtrlHostname": "windy",
-		"parentCtrlRemark":"taiji",
-		"parentCtrlIP":"192.168.1.8",
-		"parentCtrlMAC":"44:33:6e:3b:88:66",
-		"parentCtrlConnectTime":"60",
-		"parentCtrlEn": "true"
-	},{
-		"parentCtrlHostname": "windy",
-		"parentCtrlRemark":"taiji",
-		"parentCtrlIP":"192.168.0.5",
-		"parentCtrlMAC":"44:33:6e:3b:88:66",
-		"parentCtrlConnectTime":"60",
-		"parentCtrlEn": "true"
-	},{
-		"parentCtrlHostname": "windy",
-		"parentCtrlRemark":"taiji",
-		"parentCtrlIP":"192.168.1.3",
+		"parentCtrlIP":"192.168.0.1",
 		"parentCtrlMAC":"44:33:6e:3b:88:66",
 		"parentCtrlConnectTime":"60",
 		"parentCtrlEn": "true"

@@ -47,7 +47,7 @@
         </select>
       </div>
       <div class="col-sm-4">
-        <p id="macCurrenWrap" class="help-block none">Local Host MAC Address: C8:C8:C8:C8:C8:C8</p>
+        <p id="macCurrenWrap" class="help-block none">Local Host's MAC: C8:C8:C8:C8:C8:C8</p>
         <input type="text" class="validatebox form-control none" id="macCurrentWan" required="required" maxlength="17" data-options='{"type":"mac"}'>
       </div>
     </div>

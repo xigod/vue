@@ -1,7 +1,12 @@
+
+
+
 /********获取随机数**************/
 function getRandom() {
     return "?random=" + Math.random();
 }
+
+
 
 var DeviceType = {
     "samsung": [_("Samsung"), "#4b7bc2","-88px -308px"],
@@ -143,13 +148,13 @@ var statusMsg = {
     "1309": _("The WiFi password of the upstream device is incorrect."),
 
     //APClinet
-    "2102": _("No signal"),
+    "2102": _("The device is not in Universal Repeater mode."),
     "2103": _("Bridging in Universal Repeater mode..."),
     "2104": _("Bridged in Universal Repeater mode"),
-    "2202": _("No signal"),
+    "2202": _("The device is not in Universal Repeater mode."),
     "2203": _("Bridging in Universal Repeater mode..."),
     "2204": _("Bridged in Universal Repeater mode"),
-    "2302": _("No signal"),
+    "2302": _("The device is not in Universal Repeater mode."),
     "2303": _("Bridging in Universal Repeater mode..."),
     "2304": _("Bridged in Universal Repeater mode"),
     "2107": _("The WiFi password of the upstream device is incorrect."),
@@ -1004,10 +1009,6 @@ function getStrByteNum(str) {
         this.$footer = this.$mask.find(".md-toolbar");
         this.namespace = "Modal_" + new Date().getTime();
 
-        //added by dapei, 点击蒙版层可关闭弹框
-        this.$overlay_close = this.$mask;
-        this.$overlay_close_ie = this.$overlay;
-
         this.TIMEOUT = null;
         $("body").append(this.$overlay).append(this.$mask);
         this.init();
@@ -1130,40 +1131,6 @@ function getStrByteNum(str) {
                 }
                 return false;
             });
-
-            //点击蒙版时，可以关闭弹框
-            _this.$overlay_close.on("click", function(e) {
-                if(_this.$content.hasClass("no_close_flag")) {
-                    return;
-                }
-
-                var event = e || window.event;
-                var target = event.target || event.srcElement || null;
-                if (!target) {
-                  return;
-                }
-
-                if(target.childNodes.length !== 0 && target.childNodes[0].className == "md-modal") {
-                    _this.hide();
-                    return false;
-                }
-            });
-
-            _this.$overlay_close_ie.on("click", function(e) {
-                if(_this.$content.hasClass("no_close_flag")) {
-                    return;
-                }
-
-                var event = e || window.event;
-                var target = event.target || event.srcElement || null;
-                if (!target) {
-                  return;
-                }
-
-                _this.hide();
-                return false;
-            });
-
         }
     }
     

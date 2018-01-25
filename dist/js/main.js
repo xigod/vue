@@ -21,8 +21,5 @@ window.LANGUAGE = {
 window.CONFIG_HASSYSTIME = false;
 window.CONFIG_SUPPORT_LANG = false;
 window.CONFIG_LANG = false;
-window.b28Cfg = [];
-window.b28Cfg.supportLang = ['es','en','cn'];
-window.b28Cfg.defaultLang = 'en';
-require('../common/lang/b28n.js');
+
 $("body").addClass("index-body");

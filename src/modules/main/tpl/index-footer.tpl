@@ -10,7 +10,7 @@
     		<a class="nav-href" target="_blank" href="http://weibo.com/100tenda">Sina Microblog</a>
     	</div>
     	<div  class="nav-href-wrap">
-    		<a class="nav-href" target="_blank" href='/wechat.html'>WeChat</a>
+    		<a class="nav-href" target="_blank" href='/wechart.html'>Wechat</a>
     	</div>
     </div>
     <!--for multi-->

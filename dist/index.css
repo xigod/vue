@@ -183,7 +183,7 @@ th {
 @font-face {
   font-family: 'reasyicon';
   src: url("/fonts/reasyicon.eot");
-  src: url("/fonts/reasyicon.eot?#iefix") format("embedded-opentype"), url("/fonts/reasyicon.ttf") format("truetype"), url("/fonts/reasyicon.woff") format("woff"), url("/fonts/reasyicon.svg#reasyicon") format("svg");
+  src: url("/fonts/reasyicon.eot?#iefix") format("embedded-opentype"), url("/fonts/reasyicon.ttf") format("truetype"), url("/fonts/reasyicon.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -2227,8 +2227,6 @@ input[type="button"].btn-block {
 
 .dialog-con-float {
   float: left; }
-  .dialog-con-float .help-block {
-    text-align: center; }
 
 .input-group {
   position: relative;
@@ -3066,8 +3064,7 @@ select[class*=" input-"] {
   display: block; }
 
 .input-append .input-box {
-  padding-right: 35px !important;
-  padding-left: 12px !important; }
+  padding-right: 35px !important; }
 
 /*公共组件*/
 .input-append .dropdown-toggle {
@@ -3668,8 +3665,7 @@ html, body {
   padding: 30px 0;
   width: 100%; }
   .nav-content .nav-des {
-    font-size: 15px;
-    padding-left: 4px; }
+    font-size: 15px; }
 
 @media (max-width: 767px) {
   .main-content, .container-fluid {
@@ -3685,7 +3681,7 @@ html, body {
     top: 45px;
     z-index: 1000;
     right: -240px;
-    -webkit-transition: all 0.3s ease;
+    webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease; }
   #nav-menu.nav-menu-push {
@@ -3892,7 +3888,7 @@ html, body {
   font-weight: bold; }
 
 .pic-success {
-  background: url(/img/totalPicture.png) -88px -136px no-repeat;
+  background: url(/img/totalPicture.png) -88px -133px no-repeat;
   display: inline-block;
   width: 75px;
   height: 69px; }
@@ -3927,47 +3923,47 @@ html, body {
   display: inline-block; }
 
 .picture.pic-upgrade {
-  background-position: -87px 6px;
+  background-position: -87px 9px;
   width: 71px;
   height: 73px; }
 
 .picture.pic-net {
-  background-position: 0px -88px;
+  background-position: 0px -85px;
   width: 84px;
   height: 84px; }
 
 .picture.pic-router {
-  background-position: 0px -281px;
+  background-position: 0px -278px;
   width: 78px;
   height: 84px; }
 
 .picture.pic-wisp {
-  background-position: 0px 5px;
+  background-position: 0px 8px;
   width: 84px;
   height: 84px; }
 
 .picture.pic-preRouter {
-  background-position: 0px -375px;
+  background-position: 0px -372px;
   width: 78px;
   height: 84px; }
 
 .picture.pic-device {
-  background-position: 1px -186px;
+  background-position: 1px -183px;
   width: 81px;
   height: 84px; }
 
 .picture.pic-reboot {
-  background-position: -87px -70px;
+  background-position: -87px -67px;
   width: 71px;
   height: 65px; }
 
 .picture.pic-ok {
-  background-position: -95px -140px;
+  background-position: -95px -137px;
   width: 71px;
   height: 73px; }
 
 .picture.pic-wifiExtend {
-  background-position: -89px -212px;
+  background-position: -89px -209px;
   width: 57px;
   height: 22px; }
 
@@ -3977,124 +3973,104 @@ html, body {
   top: 4px; }
 
 .picture.pic-add {
-  background-position: -83px -260px;
+  background-position: -83px -257px;
   width: 26px;
   height: 26px;
   cursor: pointer; }
 
 .picture.pic-del {
-  background-position: -83px -295px;
+  background-position: -83px -292px;
   width: 26px;
   height: 26px;
   cursor: pointer; }
 
 .picture.pic-download {
-  background-position: -83px -332px;
+  background-position: -83px -329px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-upload {
-  background-position: -83px -363px;
-  width: 26px;
-  height: 26px; }
-
-.picture.pic-parental-control {
-  background-position: -83px -425px;
-  width: 26px;
-  height: 26px; }
-
-.picture.pic-parental-control.active {
-  background-position: -83px -232px;
-  width: 26px;
-  height: 26px; }
-
-.picture.pic-power-save {
-  background-position: -135px -233px;
-  width: 26px;
-  height: 26px; }
-
-.picture.pic-power-save.active {
-  background-position: -109px -233px;
+  background-position: -83px -360px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-status {
-  background-position: -135px -345px;
+  background-position: -135px -342px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-status.active {
-  background-position: -109px -345px;
+  background-position: -109px -342px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-network {
-  background-position: -135px -258px;
+  background-position: -135px -254px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-network.active {
-  background-position: -109px -258px;
+  background-position: -109px -254px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-wifi {
-  background-position: -135px -370px;
+  background-position: -135px -367px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-wifi.active {
-  background-position: -109px -370px;
+  background-position: -109px -367px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-user {
-  background-position: -135px -426px;
+  background-position: -135px -423px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-user.active {
-  background-position: -109px -426px;
+  background-position: -109px -423px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-netCtrl {
-  background-position: -135px -285px;
+  background-position: -135px -282px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-netCtrl.active {
-  background-position: -109px -285px;
+  background-position: -109px -282px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-time {
-  background-position: -135px -285px;
+  background-position: -135px -282px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-time.active {
-  background-position: -109px -285px;
+  background-position: -109px -282px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-adv {
-  background-position: -135px -316px;
+  background-position: -135px -313px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-adv.active {
-  background-position: -109px -316px;
+  background-position: -109px -313px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-sys {
-  background-position: -135px -396px;
+  background-position: -135px -393px;
   width: 26px;
   height: 26px; }
 
 .picture.pic-sys.active {
-  background-position: -109px -396px;
+  background-position: -109px -393px;
   width: 26px;
   height: 26px; }
 
@@ -4132,6 +4108,7 @@ html, body {
   border: 0px;
   float: right;
   margin-top: 6px;
+  cursor: pointer;
   color: #fff;
   width: auto; }
 
@@ -4145,19 +4122,11 @@ html, body {
   min-width: 90px; }
 
 #selectLang {
-  /*margin-left: 20px;*/
-  /*display: inline-block;*/
-  float: left;
-  margin-left: 70px; }
-
-#loginout, #appManage, #selectLang {
-  cursor: pointer; }
-
-.loginout {
-  float: right;
   margin-left: 20px;
-  padding-left: 20px;
-  border-left: 1px solid #fff; }
+  display: inline-block; }
+
+#loginout {
+  cursor: pointer; }
 
 .nav-icon-weixin {
   position: absolute;
@@ -4187,24 +4156,8 @@ html, body {
   #statistic .ico-text {
     font-size: 11px; } }
 
-/*.span-fixed {
-	  max-width: 200px;
-}*/
-@media (max-width: 320px) {
-  #wifiScanTbody .span-fixed {
-    max-width: 90px; } }
-
-@media (min-width: 360px) {
-  #wifiScanTbody .span-fixed {
-    max-width: 140px; } }
-
-@media (min-width: 768px) {
-  #wifiScanTbody .span-fixed {
-    max-width: 50px; } }
-
-@media (min-width: 1200px) {
-  #wifiScanTbody .span-fixed {
-    max-width: 200px; } }
+.span-fixed {
+  max-width: 200px; }
 
 @media (min-width: 1200px) {
   fieldset .table-responsive {
@@ -4234,12 +4187,10 @@ form .legend {
 #attachedDevices .input-medium {
   width: 120px; }
 
-#attachedDevices div, #controlsDevices div, #qosListAccess .deviceName div, #guestList div {
+#attachedDevices div, #controlsDevices div, #qosListAccess .deviceName div {
   padding-left: 0; }
 
-#qosList td,
-#onlineList td,
-#guestList td {
+#qosList td {
   padding: 18px 8px; }
 
 @media (max-width: 767px) {
@@ -4309,12 +4260,10 @@ form .legend {
   font-weight: 100;
   line-height: inherit; }
 
-#appDianoseWrapper {
-  padding-top: 20px; }
-  #appDianoseWrapper ul {
-    margin-top: 10px; }
-    #appDianoseWrapper ul li {
-      margin: 5px 0; }
+#appDianoseWrapper ul {
+  margin-top: 10px; }
+  #appDianoseWrapper ul li {
+    margin: 5px 0; }
 
 .connect-ui img.connect-error {
   margin-left: 30px; }
@@ -4376,71 +4325,3 @@ table tbody tr {
 
 .lang-hu .help-out {
   margin-left: 120px; }
-
-.app {
-  width: 97px;
-  height: auto;
-  float: left; }
-
-.top40 {
-  height: 116px;
-  font-size: 14px;
-  vertical-align: middle; }
-
-/*.lang-en {
-  .top40 {
-    padding:3px 10px;
-  }
-}*/
-.lang-cn .top40, .lang-zh .top40 {
-  padding: 30px 10px; }
-
-.or {
-  text-align: center;
-  padding-top: 40px;
-  font-size: 18px;
-  color: #999; }
-
-#iptvHead {
-  background: #f6f6f6;
-  border: 1px solid #e4e4e4;
-  height: 41px; }
-
-.iptvBody, #emptyVlan {
-  border: 1px solid #e4e4e4;
-  border-top: none;
-  height: 41px; }
-
-#emptyVlan {
-  color: #CCC; }
-
-#iptvHead > th, .iptvBody > th {
-  text-align: center; }
-
-#wifiScanTbody tr, .selectSSID {
-  cursor: pointer; }
-
-#tendaApp {
-  padding-bottom: 20px; }
-
-.toggle-on-icon {
-  background: url(/img/on.png) 0 no-repeat;
-  width: 40px;
-  height: 27px;
-  margin: 0 auto; }
-
-.toggle-off-icon {
-  background: url(/img/off.png) 0 no-repeat;
-  width: 40px;
-  height: 27px;
-  margin: 0 auto; }
-
-#onlineList .toggle-on-icon, #onlineList .toggle-off-icon {
-  margin: 0; }
-
-#urlFilterWrap, #customVLAN {
-  padding-bottom: 20px; }
-
-@media (min-width: 1200px) {
-  #guestList div.guest-device {
-    width: 17%; } }

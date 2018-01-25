@@ -2,55 +2,12 @@ define(function (require, exports, module) {
 
 	var pageModule = new PageLogic({
 		getUrl: "goform/getNAT",
-		modules: "staticIPList,IPTV,portList,ddns,dmz,upnp,lanCfg,macFilter,localhost,wifiRelay,onlineList,ping",
+		modules: "staticIPList,portList,ddns,dmz,upnp,lanCfg,macFilter,localhost,wifiRelay,onlineList",
 		setUrl: "goform/setNAT"
 	});
 
-	var iptvChange = false;
-	var do_close_flag = true;
-
 	pageModule.initEvent = function () {
 		pageModule.update("ddns", 2e3, updateDDNSStatus);
-
-		//added by dapei, 2017.12.20
-		//调用confirm组件，提示iptv重启
-		$("#ok").on("click", function () {
-			do_close_flag = false;
-
-			var $this = $(this);
-			$this.attr("disabled", true);
-			var str = pageModule.getSubmitData();
-			
-			$.ajax({
-				url: "goform/setNAT",
-				type: "POST",
-				data: str,
-				success: function (obj) {
-					if (checkIsTimeOut(obj)) {
-						top.location.reload(true);
-					}
-					dialog.close();
-
-					//重启后刷新当前页面
-					dynamicProgressLogic.init("reboot", "", 450);
-				},
-				error: function () {
-					$this.removeAttr("disabled");
-					mainLogic.showModuleMsg(_("Failed to upload the data."));
-				}
-			});
-		});
-
-		//点击蒙版时，可以关闭弹框
-		$("#progress-overlay").on("click",function() {
-			if(do_close_flag) {
-				dialog.close({
-					Id: "changeModeInfo"
-				});
-			}else{
-				return;
-			}
-		});
 	};
 
 	function updateDDNSStatus(obj) {
@@ -68,29 +25,12 @@ define(function (require, exports, module) {
 		this.initValue = function () {
 			var wifiRelayObj = pageModule.data.wifiRelay;
 			if (wifiRelayObj.wifiRelayType == "ap" || wifiRelayObj.wifiRelayType == "client+ap") {
-				$("#staticIPMapping, #protMapping, #ddnsConfig, #dmzHost, #upnp,#firewall").addClass("none");
-			}
-			if (wifiRelayObj.wifiRelayType != "disabled") {
-				$("#iptv").addClass("none");
+				$("#staticIPMapping, #protMapping, #ddnsConfig, #dmzHost, #upnp").addClass("none");
+
 			}
 		}
 	}
 
-	pageModule.beforeSubmit = function () {
-
-		if (iptvChange) {
-			// if (!confirm(_("The router will reboot to make the change of IPTV settings save and take effect. Click \"OK\" to reboot now, and click \"Cancel\" to cancel the changes."))) {
-			// 	return false;
-			// }
-			$("#modeMsg").html(_("The router will reboot to make the change of IPTV settings save and take effect. Click \"OK\" to reboot now, and click \"Cancel\" to cancel the changes."));
-			dialog.open({
-				Id: "changeModeInfo",
-				height: 300
-			});
-			return false;
-		}
-		return true;
-	}
 
 	var macFilter = new MacFilterModule();
 	pageModule.modules.push(macFilter);
@@ -310,11 +250,11 @@ define(function (require, exports, module) {
 				return;
 			}
 			var tmpObj = {
-				"hostname": "",
-				"remark": $("#filterRemark").val(),
-				"mac": $("#filterMac").val().toUpperCase().replace(/\-/g, ":"),
-				"filterMode": _this.curFilterMode
-			},
+					"hostname": "",
+					"remark": $("#filterRemark").val(),
+					"mac": $("#filterMac").val().toUpperCase().replace(/\-/g, ":"),
+					"filterMode": _this.curFilterMode
+				},
 				str;
 
 			if (_this.localhostObj.mac.toUpperCase() == tmpObj.mac.toUpperCase() && _this.curFilterMode == "deny") {
@@ -367,7 +307,7 @@ define(function (require, exports, module) {
 
 			if (subMac1.charAt(1) && parseInt(subMac1.charAt(1), 16) % 2 !== 0) {
 				$("#filterMac").focus();
-				return _('The second character must be an even number.');
+				return _('The second character must be even number.');
 			}
 			if (mac === "00:00:00:00:00:00") {
 				$("#filterMac").focus();
@@ -399,42 +339,6 @@ define(function (require, exports, module) {
 			return;
 		}
 	}
-
-	
-	var pingWan = new PingWan();
-	pageModule.modules.push(pingWan);
-
-	function PingWan() {
-		var that = this;
-
-		this.moduleName = "ping";
-		this.init = function () {
-
-		};
-
-		this.initValue = function (obj) {
-			if (obj.pingEn == "true") {
-				$("#firewallEnable")[0].checked = true;
-			} else {
-				$("#firewallDisable")[0].checked = true;
-			}
-		};
-
-
-		this.getSubmitData = function () {
-			subObj = {
-				"module8": that.moduleName,
-				"pingEn": ""
-			};
-			if ($("#firewallEnable")[0].checked == true) {
-				subObj.pingEn = "true";
-			} else {
-				subObj.pingEn = "false";
-			}
-			return objToString(subObj);
-		};
-	}
-
 	/*
 	 * @method staticModule [显示及设置静态IP地址]
 	 */
@@ -507,7 +411,7 @@ define(function (require, exports, module) {
 			}
 			if (!checkIpInSameSegment(staticIP, lanMask, lanIP, lanMask)) {
 				$("#staticIp").focus();
-				return _("%s and %s must be in the same network segment.", [_("Static IP Address"), _("LAN IP Address")]);
+				return _("%s and %s must be in the same network segment.", [_("Static IP"), _("LAN IP")]);
 			}
 
 			var msg = checkIsVoildIpMask(staticIP, lanMask, _("Static IP Address"));
@@ -544,7 +448,7 @@ define(function (require, exports, module) {
 
 			if (subMac1.charAt(1) && parseInt(subMac1.charAt(1), 16) % 2 !== 0) {
 				$("#staticMac").focus();
-				return _('The second character must be an even number.');
+				return _('The second character must be even number.');
 			}
 			if (mac === "00:00:00:00:00:00") {
 				$("#staticMac").focus();
@@ -772,7 +676,7 @@ define(function (require, exports, module) {
 				portList: getPortListValue()
 			};
 			return objToString(data);
-		};
+		}
 
 		/*******检查添加时的数据合法性*******/
 		function checkAddListValidate() {
@@ -820,17 +724,17 @@ define(function (require, exports, module) {
 
 			if (inPort == "" || parseInt(inPort, 10) > 65535 || parseInt(inPort, 10) < 1) {
 				$("#internalPort").find(".input-box").focus();
-				return (_("Internal Port Range: 1-65535"));
+				return (_("Internal port range: 1-65535"));
 
 			}
 
 			/*if ($.trim(outIp) == _("All IP Addresses")) {
 				outIp = "All";
 			}
-	
+
 			//判断IP地址合法性
 			if (outIp == "All") {
-	
+
 			} else {
 				if (!(/^([1-9]|[1-9]\d|1\d\d|2[0-1]\d|22[0-3])\.(([0-9]|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){2}([0-9]|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$/).test(outIp)) {
 					$("#externalIP").find(".input-box").focus();
@@ -1058,10 +962,8 @@ define(function (require, exports, module) {
 			this.data = ddnsObj;
 			//连接状态与联网状态的英文表述一致
 			if ($('html').hasClass("lang-cn")) {
-				$("#ddnsConnectionStatusInfo").html(_("Connection Status"));
+				$("#ddnsConnectionStatusInfo").html("连接状态");
 			}
-
-			inputValue(this.data);
 
 			//设置密码框为聚焦明文，失去焦点密文形式
 			if (!this.addInputEvent) {
@@ -1069,6 +971,7 @@ define(function (require, exports, module) {
 				this.addInputEvent = true;
 			}
 
+			inputValue(this.data);
 			showConnectStatus(ddnsObj.ddnsStatus);
 			this.changeDdnsEn();
 
@@ -1186,7 +1089,7 @@ define(function (require, exports, module) {
 		};
 		this.checkData = function () {
 			return;
-		};
+		}
 		this.getSubmitData = function () {
 			//ap模式下与client+ap模式下不需要传wan值;
 			if (pageModule.data.wifiRelay.wifiRelayType == "ap" || pageModule.data.wifiRelay.wifiRelayType == "client+ap") {
@@ -1202,314 +1105,4 @@ define(function (require, exports, module) {
 	}
 
 	/*********END upnp*******/
-
-/**
-	 *  @method IPTVModule [IPTV功能]
-	 */
-
-	var iptvModule = new IPTVModule();
-	pageModule.modules.push(iptvModule);
-
-	function IPTVModule() {
-		var that = this;
-		this.moduleName = "IPTV";
-		this.iptvObj = {};
-		this.init = function () {
-			this.initEvent();
-		};
-
-		this.initHtml = function () {
-			iptvEn();
-			changeVlanArea();
-			top.mainLogic.initModuleHeight();
-		}
-
-		this.initEvent = function () {
-			$("input[name=iptvEnable]").on("click", iptvEn);
-			$("#VLANArea").on("change", changeVlanArea);
-			$("#addVLAN").on("click", addVlan);
-			$(".deleteVlan").on("click", deleteVlan);
-		};
-
-		this.initValue = function (obj) {
-			that.iptvObj = obj;
-			if (obj.IPTVEn == "true") {//开启IPTV
-				$("input[name=iptvEnable]")[0].checked = true;
-			} else {
-				$("input[name=iptvEnable]")[1].checked = true;
-			}
-
-			$("#VLANArea").val(obj.VLANArea); //VLAN区域
-
-			if (obj.VLANArea == "1") {
-				if (obj.VLANID[0] == "85") {
-					$("#VLAN-85")[0].checked = true;
-				} else {
-					$("#VLAN-51")[0].checked = true;
-				}
-			} else if (obj.VLANArea == "2") {
-				$(".iptvBody").remove();//清空数据
-				var tableTpl;
-				if (obj.VLANID.length != 0) {
-					for (var id = 0; id < obj.VLANID.length; id++) {
-						tableTpl = "<tr class='iptvBody'><th><input type='radio' name='setUpVlan'></th><th>" +
-							+ obj.VLANID[id]
-							+ "</th><th><span class='picture pic-del deleteVlan'></span></th></tr>";
-						$("#iptvHead").parent().append(tableTpl);
-					}
-				}
-				checkEmpty();
-
-				if (obj.VLANSelect == "") {
-					obj.VLANSelect = 0;
-				}
-				if ($(".iptvBody").length > 0) {
-					$(".iptvBody")[obj.VLANSelect].children[0].children[0].checked = true;
-				}
-			}
-
-			$(".deleteVlan").on("click", deleteVlan);
-			this.initHtml();
-		};
-
-		this.checkData = function () {
-			//IPTV修改后需要重启
-			iptvChange = false;
-			var befObj = that.iptvObj;
-			var subObj = {
-				"module7": that.moduleName,
-				"IPTVEn": "",
-				"VLANArea": "",
-				"VLANID": [],
-				"VLANSelect": ""
-			};
-
-			if ($("input[name=iptvEnable]")[0].checked == true) {
-				subObj.IPTVEn = "true";
-				subObj.VLANArea = $("#VLANArea").val();
-
-				if (subObj.VLANArea == "1") {
-					if ($("#VLAN-85")[0].checked == true) {
-						subObj.VLANID = "85";
-					} else {
-						subObj.VLANID = "51";
-					}
-				} else if (subObj.VLANArea == "2") {
-					var obj = getVlanList();
-					subObj.VLANID = obj.list;
-					subObj.VLANSelect = obj.select;
-				}
-
-			} else {
-				subObj.IPTVEn = "false";
-			}
-
-			if(subObj.IPTVEn == befObj.IPTVEn ){
-				if(subObj.IPTVEn == "false"){
-					return ;
-				}
-				if(subObj.VLANArea == befObj.VLANArea){
-					if(subObj.VLANArea == "1" && subObj.VLANID[0] != befObj.VLANID[0]){//上海地区
-						iptvChange = true;		
-					}else if(subObj.VLANArea == "2"){//自定义
-						var sameFlag = true,
-							i = 0;
-
-						for(;i<subObj.VLANID.length;i++){
-							if(subObj.VLANID[i] != befObj.VLANID[i]){
-								iptvChange = true;
-								break;
-							}
-						}
-						if(subObj.VLANSelect != befObj.VLANSelect){
-							iptvChange = true;
-						}
-					}
-				}else{
-					iptvChange = true;			
-				}
-			}else{
-				iptvChange = true;
-			}
-
-		};
-
-		this.getSubmitData = function () {
-			var subObj = {
-				"module7": that.moduleName,
-				"IPTVEn": "",
-				"VLANArea": "",
-				"VLANID": "",
-				"VLANSelect": ""
-			};
-			if ($("input[name=iptvEnable]")[0].checked == true) {
-				subObj.IPTVEn = "true";
-				subObj.VLANArea = $("#VLANArea").val();
-
-				if (subObj.VLANArea == "1") {
-					if ($("#VLAN-85")[0].checked == true) {
-						subObj.VLANID = "85";
-					} else {
-						subObj.VLANID = "51";
-					}
-				} else if (subObj.VLANArea == "2") {
-					var obj = getVlanList();
-					subObj.VLANID = obj.list;
-					subObj.VLANSelect = obj.select;
-				}
-
-			} else {
-				subObj.IPTVEn = "false";
-			}
-			return objToString(subObj);
-		};
-
-		/**
-		 * @method自定义模式下去获取Vlan列表
-		 */
-
-		function getVlanList() {
-			var ids = $(".iptvBody");
-			var obj = {
-				list: [],
-				select: ""
-			};
-
-			for (var i = 0; i < ids.length; i++) {
-				obj.list.push(ids[i].children[1].innerHTML);
-				if (ids[i].children[0].children[0].checked == true) {
-					obj.select = "" + i;
-				}
-			}
-
-			return obj;
-		}
-
-		function iptvEn() {
-
-			if ($("input[name=iptvEnable]")[0].checked == true) {//点击开启
-				$("#iptvEn").removeClass("none");
-				if ($("#VLANArea").val() == "") {
-					$("#VLANArea").val(0);
-					changeVlanArea();
-				}
-			} else {
-				$("#iptvEn").addClass("none");
-			}
-
-			//重新绘制高度
-			top.mainLogic.initModuleHeight();
-		}
-
-		function changeVlanArea() {
-			var area = $("#VLANArea").val();
-
-			if (area == "0") {//默认
-				$("#customVLAN,#shVLAN").addClass("none");
-			} else if (area == "1") {
-				$("#shVLAN").removeClass("none");
-				$("#customVLAN").addClass("none");
-
-				if ($("#VLAN-51")[0].checked == false && $("#VLAN-85")[0].checked == false) {
-					$("#VLAN-51")[0].checked = true;//默认选择51
-				}
-
-
-			} else {
-				$("#shVLAN").addClass("none");
-				$("#customVLAN").removeClass("none");
-			}
-
-			//重新绘制高度
-			top.mainLogic.initModuleHeight();
-		}
-
-
-		/**
-		 * @method 自定义VLAN模式下添加VLANID
-		 * @prama ID ID有值时，使用ID值
-		 */
-		function addVlan() {
-			if ($("#customVLANID").parent().attr("class").indexOf("has-feedback has-error") != -1) {
-				return;
-			}
-			var vlanID = $("#customVLANID").val();
-
-			if ($("#customVLANID").val() == "") {
-				mainLogic.showModuleMsg(_("The VLAN ID is required."));
-				$("#customVLANID").focus();
-				return;
-			}
-
-			var obj = getVlanList();
-			for (var i = 0; i < obj.list.length; i++) {
-				if (vlanID == obj.list[i]) {
-					mainLogic.showModuleMsg(_("Duplicate VLAN IDs are not allowed"));
-					$("#customVLANID").focus();
-					return;
-				}
-			}
-
-			if (obj.list.length >= 8) {
-				mainLogic.showModuleMsg(_("Only a maximum of %s VLANs are allowed.", [8]));
-				return;
-			}
-
-			tableTpl = "<tr class='iptvBody'><th><input type='radio' name='setUpVlan'></th><th>" +
-				+ vlanID
-				+ "</th><th><span class='picture pic-del deleteVlan'></span></th></tr>";
-			$("#iptvHead").parent().append(tableTpl);
-
-			if ($(".iptvBody").length == 1) {
-				$(".iptvBody")[0].children[0].children[0].checked = true;
-			}
-
-			checkEmpty();
-
-			$(".deleteVlan").on("click", deleteVlan);
-			top.mainLogic.initModuleHeight();
-		}
-
-
-
-
-		/**
-		 * @method 自定义VLAN模式下选择删除VLANID
-		 */
-		function deleteVlan() {
-
-			var setFlag = false;
-			if ($(this).parent().parent()[0].children[0].children[0].checked == true) {
-				setFlag = true;
-			}
-
-			$(this).parent().parent().remove();
-
-			//如果被删掉的是被选中的VLANID 则让第一个成为被选中的
-			if (setFlag && $(".iptvBody").length > 0) {
-				$(".iptvBody")[0].children[0].children[0].checked = true;
-			}
-
-			checkEmpty();
-			top.mainLogic.initModuleHeight();
-		}
-
-		/**
-		 * @method 检查VLANID 是否为空 
-		 * 为空则显示数据为空
-		 */
-		function checkEmpty() {
-			if ($(".iptvBody").length == 0) {
-				$("#vlanEmpty").removeClass("none");
-			} else {
-				$("#vlanEmpty").addClass("none");
-			}
-		}
-
-	}
-
-	
-	/*END IPTV*/
-
-
 })

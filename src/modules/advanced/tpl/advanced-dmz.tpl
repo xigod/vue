@@ -14,7 +14,7 @@
     </div>
     <!--Show when dmz is Enabled-->
     <div id="dmzWrap" class="form-group none">
-      <label class="col-sm-4 col-md-3 control-label" for="dmzHostIP">Host IP Address</label>
+      <label class="col-sm-4 col-md-3 control-label" for="dmzHostIP">Host IP</label>
       <div class="col-sm-4">
         <input type="text" class="form-control validatebox" id="dmzHostIP" name="dmzHostIP" data-options='{"type": "ip"}' required="required" maxlength="15">
       </div>

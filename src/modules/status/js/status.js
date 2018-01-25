@@ -300,10 +300,10 @@ define(function (require, exports, module) {
 
 			if (val > 1024) {
 				$("#" + id).html((val / 1024).toFixed(1));
-				$("#" + id + "~small").html("MB/s");
+				$("#" + id + "~small").html(_("MB/s"));
 			} else {
 				$("#" + id).html(val.toFixed(1));
-				$("#" + id + "~small").html("KB/s");
+				$("#" + id + "~small").html(_("KB/s"));
 			}
 		}
 	}

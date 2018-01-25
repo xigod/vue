@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-4 col-md-3 control-label" for="wanPPPoEPwd">Password</label>
+    <label class="col-sm-4 col-md-3 control-label" for="wanPPPoEPwd">Password from ISP</label>
     <div class="col-sm-5 col-md-4">
       <input type="password" id="wanPPPoEPwd" class="form-control validatebox" name="wanPPPoEPwd" required="required" data-options='{"type": "ascii"}'  maxLength="128"/>
     </div>

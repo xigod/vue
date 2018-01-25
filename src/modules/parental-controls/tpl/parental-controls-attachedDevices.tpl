@@ -1,8 +1,8 @@
 
 <form class="form-horizontal" id="controlsDevices">
-  <h2 class="legend">Online Devices</h2>
+  <h2 class="legend">Attached Devices</h2>
   <fieldset>
-    <div class="table-responsive form-group">
+    <div class="table-responsive">
       <table class="table">
         <thead>
           <tr>

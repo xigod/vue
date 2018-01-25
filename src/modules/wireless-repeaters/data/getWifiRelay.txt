@@ -1,21 +1,19 @@
 {
 	"wifiRelay": {
-		"wifiRelayType": "wisp",
+		"wifiRelayType": "disabled",
 		"wifiRelaySSID": "Tenda_48EE60",
 		"wifiRelayChannel": "0",
 		"wifiRelaySecurityMode": "none",
 		"wifiRelayPwd": "12345678",
 		"wifiRelayMAC": "44:33:6e:3b:88:22",
-		"wifiRelayConnectStatus":"bridgeSuccess",
-		"wifiRelayChkHz":"5G"
+		"wifiRelayConnectStatus":"bridgeSuccess"
 	},
 	"wifiScan": [{
 		"wifiScanSSID": "!@#%^&*():\"<>?;'[],./",
 		"wifiScanMAC": "00:B0:C6:41:75:30",
 		"wifiScanChannel": "1",
 		"wifiScanSecurityMode": "none",
-		"wifiScanSignalStrength": "-46",
-		"wifiScanChkHz":"5G"
+		"wifiScanSignalStrength": "-46"
 	},{
 		"wifiScanSSID": "windy",
 		"wifiScanMAC": "00:B0:C6:41:75:30",

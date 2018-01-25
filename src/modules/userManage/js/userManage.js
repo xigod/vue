@@ -29,7 +29,7 @@ define(function (require, exports, module) {
 				$tr = $listTable.eq(i);
 
 				//判断是否关闭 或者上传或下载限制为0
-				if ($tr.find(".switch").hasClass("toggle-off-icon")) {
+				if ($tr.find(".switch").hasClass("icon-toggle-off")) {
 					index++;
 				}
 			}
@@ -76,8 +76,7 @@ define(function (require, exports, module) {
 		this.initEvent = function () {
 			$("#qosList").delegate(".icon-edit", "click", editDeviceName);
 
-			// $("#qosList").delegate(".icon-toggle-on, .icon-toggle-off", "click", clickAccessInternet);
-			$("#qosList").delegate(".switch", "click", clickAccessInternet);
+			$("#qosList").delegate(".icon-toggle-on, .icon-toggle-off", "click", clickAccessInternet);
 
 			$("#qosList").delegate(".edit-old", "blur", function () {
 				$(this).parent().prev().attr("title", $(this).val());
@@ -211,8 +210,7 @@ define(function (require, exports, module) {
 						if (nativeHost) {
 							str += "<div class='nativeHost'>" + _("Local") + "</div>"
 						} else {
-							// str += "<div class='switch icon-toggle-on'></div>";
-							str += "<div class='switch toggle-on-icon'></div>";
+							str += "<div class='switch icon-toggle-on'></div>";
 						}
 						str += '</td>';
 					}
@@ -297,7 +295,7 @@ define(function (require, exports, module) {
 				if (deviceName.replace(/[ ]/g, "") == "") {
 					//$td.find("input[data-mark]").focus();
 					//当前元素已隐藏，不能聚焦  IE8会出错
-					return _("No space is allowed in a device name.");
+					return _("No space is allowed in a password.");
 				}
 
 			}
@@ -351,9 +349,9 @@ define(function (require, exports, module) {
 			var val = parseFloat(value);
 
 			if (val > 1024) {
-				return (val / 1024).toFixed(2) + "MB/s";
+				return (val / 1024).toFixed(2) + _("MB/s");
 			} else {
-				return val.toFixed(0) + "KB/s";
+				return val.toFixed(0) + _("KB/s");
 			}
 		}
 
@@ -482,16 +480,16 @@ define(function (require, exports, module) {
 		}
 
 		function clickAccessInternet() {
-			var className = this.className || "switch toggle-on-icon";
-			if (className == "switch toggle-on-icon") {
+			var className = this.className;
+			if (className == "switch icon-toggle-on") {
 
 				if (getBlackLength() >= 10) {
 					top.mainLogic.showModuleMsg(_("A maximum of %s devices can be added to the blacklist.", [10]));
 					return;
 				}
-				this.className = "switch toggle-off-icon";
+				this.className = "switch icon-toggle-off";
 			} else {
-				this.className = "switch toggle-on-icon";
+				this.className = "switch icon-toggle-on";
 			}
 		}
 
@@ -537,7 +535,7 @@ define(function (require, exports, module) {
 				}
 
 				//当允许接入选项为“本机”或者按钮为开启时，传值设为"true"
-				internetAccess = $tr.find(".internet-ctl").children().hasClass("toggle-on-icon") || $tr.find(".internet-ctl").children().hasClass("nativeHost");
+				internetAccess = $tr.find(".internet-ctl").children().hasClass("icon-toggle-on") || $tr.find(".internet-ctl").children().hasClass("nativeHost");
 
 				if (internetAccess || that.curFilterMode == "pass") {
 					tmpObj.access = "true";

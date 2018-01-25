@@ -7,7 +7,7 @@
           <tr>
             <th class="col-xs-5">IP Address</th>
             <th class="col-xs-5">MAC Address</th>
-            <th class="col-xs-2 align-center">Operation</th>
+            <th class="col-xs-2 align-center">Action</th>
           </tr>
           <tr>
             <td class="span-fixed">

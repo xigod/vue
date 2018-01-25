@@ -5,7 +5,7 @@
   <form class="form-horizontal">
     <h2 class="legend">Internet Connection</h2>
     <fieldset>
-      
+     
 
       <%include('./tpl/network-list.tpl')%>
       

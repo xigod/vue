@@ -4,15 +4,6 @@
 		"lanMask": "255.255.255.0",
 		"localhostMAC":"44:33:6e:3b:88:22"
 	},
-	"IPTV":{
-		"IPTVEn":"true",   
-		"VLANArea":"2",  
-		"VLANID":[51,23,66,85],  
-		"VLANSelect":"2"   
-	},
-	"ping":{
-		"pingEn":"true"
-	},
 	"lanCfg": {
 		"lanIP":"192.168.0.2",
 		"lanMask": "255.255.255.0",
@@ -82,7 +73,7 @@
 		"portListProtocol": "both"
 	}],
 	"ddns":{
-		"ddnsEn": "false",
+		"ddnsEn": "true",
 		"ddnsServiceName": "88ip.cn",
 		"ddnsUser": "admin",
 		"ddnsPwd": "admin",

@@ -28,7 +28,7 @@
 	//嵌入配置资源，通过配置去加载对应的语言信息
 
 	//__inline('../../langSet.js');
-	b28Cfg.supportLang = ['en','cn', 'zh'];
+	 b28Cfg.supportLang = ['es','en','cn'];
 	b28Cfg.defaultLang = 'en';
 
 	//配置语言包文件类型 within ["xml", "json"]

@@ -34,18 +34,12 @@
       Wireless Repeating
   </a> 
 </li> -->
-  <li id="parentalCtrNavWrap">
+<!--   <li class="routerMode">
   <a id="parental-controls" href="javascript:void(0)" >
-      <span class="menu picture pic-parental-control" >&nbsp;</span>
-      <span class="nav-des">Parental Controls</span>
+      <span class="menu icon-parental">&nbsp;</span>
+      Parental Controls
   </a> 
-</li>
-  <li>
-    <a id="power-save" href="javascript:void(0)" >
-        <span class="menu picture pic-power-save" name="pic-power-save" >&nbsp;</span>
-       <span class="nav-des">Sleeping Mode</span>
-    </a> 
-  </li> 
+</li> -->
   <li>
     <a id="advanced" href="javascript:void(0)" >
         <span class="menu picture pic-adv" name="pic-adv">&nbsp;</span>

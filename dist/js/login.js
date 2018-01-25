@@ -124,12 +124,12 @@
 				}
 				clickTipsFlag = false;
 				if ($("#login-caret").hasClass("active")) {
-					$(".forget-info").fadeIn(300, function () {
+					$(".forget-info").fadeIn(600, function () {
 						clickTipsFlag = true;
 					});
 					$("#login-caret").removeClass("active");
 				} else {
-					$(".forget-info").fadeOut(300, function () {
+					$(".forget-info").fadeOut(600, function () {
 						clickTipsFlag = true;
 					});
 					$("#login-caret").addClass("active");

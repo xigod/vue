@@ -11,7 +11,7 @@
   <section class="container container-notinport container-fluid none" id="normalSet">
     <header class="center-block pull-none col-sm-9 col-md-8 col-lg-8 logo-wrap">
         <img src="../../common/img/logo.png" class="img-responsive" style="width:130px; height:30px; float:left; margin-right:12px">
-        <div style="display:inline; text-align:left;" class="col-xs-12 col-sm-12 logo-text">You can access the internet after completing settings on this page.</div>
+        <div style="display:inline; text-align:left;" class="col-xs-12 col-sm-9 logo-text">You can access the internet after completing settings on this page.</div>
     </header>
     <article class="quickSet box-shadow center-block pull-none col-sm-9 col-md-8 col-lg-8" style="padding:0px; margin-bottom:20px;" id="quickSetWrap">
 
@@ -19,7 +19,7 @@
       <div class="quickContent text-center">
         <div class="text-center net-status" style="border-bottom: 1px solid #E4E4E4;padding-bottom: 23px;padding-top: 13px;margin-bottom: 10px;"><img id="loading" class="img-loading" alt="Loading..." src="../../common/img/loading.gif"><span style="margin-left:12px;">Detecting your internet connection type...</span></div>
         <div class="network-wrapper">
-          <div class="network-pic-wrapper hidden-xs hidden-sm"><span class="icon-internet quickSet-net-icon"></span><br /><div style="padding:10px 0;"><span data-lang="internetSetup">Internet</span></div></div>
+          <div class="network-pic-wrapper hidden-xs hidden-sm"><span class="icon-internet quickSet-net-icon"></span><br /><div style="padding:10px 0;">Internet</div></div>
           <div class="network-config-wrapper">
             <%include('../network/tpl/network-list.tpl')%>
             <%include('./tpl/quickset-StaticWrap.tpl')%>

@@ -22,7 +22,7 @@
               <!-- <option value="dyn.com">dyn.com</option> -->
               <option value="oray.com">oray.com</option>
               <% if(CONFIG_LANG == "cn") { %>
-              <option value="88ip.cn">88ip.cn</option>
+              <option value="88ip.com">88ip.com</option>
               <% } %>
               <% if(CONFIG_LANG == "other") { %>
               <option value="no-ip.com">no-ip.com</option>
@@ -34,7 +34,7 @@
           <div class="col-sm-4 col-md-5 help-block"> <a href="#" style="color:#0099FF" id="register">Register Now</a></div>
         </div>
         <div class="form-group">
-          <label class="col-sm-4 col-md-3 control-label" for="ddnsUser">DDNS User Name</label>
+          <label class="col-sm-4 col-md-3 control-label" for="ddnsUser">DDNS Username</label>
           <div class="col-sm-4">
             <input type="text" name="ddnsUser" id="ddnsUser" class="form-control validatebox" maxlength="64"
               data-options='{"type": "ddns"}' required="required">

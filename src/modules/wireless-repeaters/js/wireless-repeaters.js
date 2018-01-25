@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
     var pageModule = new PageLogic({
         getUrl: "goform/getWifiRelay",
-        modules: "wifiBasicCfg,wifiRelay",
+        modules: "wifiEn,wifiRelay",
         setUrl: "goform/setWifiRelay"
     });
     pageModule.modules = [];
@@ -35,7 +35,7 @@ define(function (require, exports, module) {
             $("#wifiRelaySSID").html("<p class='form-control-static'></p>");
             $("#wifiRelaySSID p").text(wifiRelayobj.wifiRelaySSID);
 
-            if (!(pageModule.data.wifiBasicCfg.wifiEn == "true" || pageModule.data.wifiBasicCfg.wifiEn_5G == "true")) { //未启用无线
+            if (pageModule.data.wifiEn.wifiEn != "true") { //未启用无线
                 $("[name='wifiRelayType']")[0].checked = true;
                 $("[name='wifiRelayType']").attr("disabled", true);
             }
@@ -296,7 +296,7 @@ define(function (require, exports, module) {
 
             $("#wifiRelayPwd").val("");
             if (ssid == "") {
-                $("#wifiRelaySSID").html('<input type="text" maxlength="32" placeholder="' + _("WiFi name of the upstream router") + '" class="form-control validatebox" data-options="{\'type\': \'ssid\'}" />');
+                $("#wifiRelaySSID").html('<input type="text" maxlength="32" placeholder="' + _("WiFi Name of of the base station") + '" class="form-control validatebox" data-options="{\'type\': \'ssid\'}" />');
                 $("#wifiRelaySSID input").val(ssid);
             } else {
 
